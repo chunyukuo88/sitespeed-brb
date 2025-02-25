@@ -13,7 +13,7 @@
   "description": "",
   "dependencies": {
     "boxen": "^8.0.1",
-    "chalk": "^5.4.1"
+    "chalk": "4.1.2"
   },
   "devDependencies": {
     "@types/boxen": "^3.0.5",
