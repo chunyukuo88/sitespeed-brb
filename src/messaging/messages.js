@@ -12,6 +12,7 @@ const art = `
 
 const messages = {
   initialGreeting: boxen(chalk.green(art), { padding: 1 }),
+  queryUserForUrl: chalk.blue('Please enter the URL you wish to measure via Lighthouse\n>'),
 };
 
 export default messages;

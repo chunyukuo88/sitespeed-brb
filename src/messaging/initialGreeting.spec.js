@@ -4,9 +4,7 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-const messages = {
-  initialGreeting: 'hello',
-};
+const message = 'hello';
 
 describe('WHEN: this function executes,', () => {
   test('THEN: it clears the console', () => {
@@ -14,7 +12,7 @@ describe('WHEN: this function executes,', () => {
       .spyOn(console, 'clear')
       .mockImplementationOnce(jest.fn(() => {}));
 
-    initialGreeting(messages);
+    initialGreeting(message);
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
@@ -23,9 +21,9 @@ describe('WHEN: this function executes,', () => {
       .spyOn(console, 'log')
       .mockImplementationOnce(jest.fn(() => {}));
 
-    initialGreeting(messages);
+    initialGreeting(message);
 
     expect(spy).toHaveBeenCalledTimes(1);
-    expect(spy).toHaveBeenCalledWith(messages.initialGreeting);
+    expect(spy).toHaveBeenCalledWith(message);
   });
 });
