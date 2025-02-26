@@ -1,6 +1,7 @@
-import chalk from 'chalk';
+// import chalk from 'chalk';
 
 export function initialGreeting(){
   console.clear();
   console.log('Welcome to Sitespeed Brb!');
 }
+console.log('Welcome to Sitespeed Brb!');
