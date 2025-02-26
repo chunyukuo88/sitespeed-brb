@@ -1,6 +1,5 @@
-import chalk from 'chalk';
+import {initialGreeting} from "./messaging/initialGreeting";
 
 export async function main() {
-  console.clear();
-  console.log('welcome to Costco, I love you.');
+  initialGreeting();
 }
