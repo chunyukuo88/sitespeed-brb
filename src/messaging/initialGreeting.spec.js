@@ -1,17 +1,31 @@
 import {initialGreeting} from "./initialGreeting";
 
-describe('WHEN: this function executes,', () => {
-  test('THEN: it clears the console', async () => {
-    const spy = jest.spyOn(console, 'clear').mockImplementationOnce(() => {});
+afterEach(() => {
+  jest.clearAllMocks();
+});
 
-    await initialGreeting();
+const messages = {
+  initialGreeting: 'hello',
+};
+
+describe('WHEN: this function executes,', () => {
+  test('THEN: it clears the console', () => {
+    const spy = jest
+      .spyOn(console, 'clear')
+      .mockImplementationOnce(jest.fn(() => {}));
+
+    initialGreeting(messages);
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
-  test('THEN: it greets the user', async () => {
-    const spy = jest.spyOn(console, 'log').mockImplementationOnce(() => {});
-    await initialGreeting();
+  test('THEN: it greets the user', () => {
+    const spy = jest
+      .spyOn(console, 'log')
+      .mockImplementationOnce(jest.fn(() => {}));
+
+    initialGreeting(messages);
 
     expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith(messages.initialGreeting);
   });
 });
