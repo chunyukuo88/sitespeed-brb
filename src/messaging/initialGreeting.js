@@ -1,6 +1,4 @@
-import chalk from 'chalk';
-
-export function initialGreeting(){
+export function initialGreeting(messages){
   console.clear();
-  console.log('Welcome to Sitespeed Brb!');
+  console.log(messages.initialGreeting);
 }

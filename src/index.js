@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import {initialGreeting} from "./messaging/initialGreeting.js";
+import messages from "./messaging/messages.js";
 
 export async function main() {
-  initialGreeting();
+  initialGreeting(messages);
 }
 
 await main();
