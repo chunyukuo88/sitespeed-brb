@@ -3,6 +3,7 @@ import processUrl from './processUrl';
 
 jest.mock('./fetcher.js', () => jest.fn());
 
+
 describe('processUrl()', () => {
   describe('Validating when the user has NOT entered a valid URL', () => {
     describe('WHEN: they just pressed "ENTER" too early,', () => {
