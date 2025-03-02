@@ -1,5 +1,5 @@
 import fetcher from './fetcher.js';
-import processUrl from './processUrl';
+import { processUrl } from './processUrl';
 
 jest.mock('./fetcher.js', () => jest.fn());
 

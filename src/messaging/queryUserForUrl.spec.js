@@ -11,14 +11,16 @@ jest.mock('../processing/processUrl.js', () => ({
   processUrl: jest.fn(),
 }));
 
-describe('WHEN: the function executes,', () => {
-  test('THEN: It asks the user for a URL', async () => {
-    const spy = jest.spyOn(console, 'log').mockImplementationOnce(jest.fn(() => {}));
-    jest.spyOn(processing, 'processUrl').mockImplementationOnce(jest.fn(() => {}));
+describe('GIVEN: the user enters a URL,', () => {
+  describe('WHEN: there are no problems with the URL or site speed service,', () => {
+    test('THEN: It sends the URL typed by the user to be measured for site speed', async () => {
+      const spy = jest.spyOn(console, 'log').mockImplementationOnce(jest.fn(() => {}));
+      jest.spyOn(processing, 'processUrl').mockImplementationOnce(jest.fn(() => {}));
 
-    await queryUserForUrl(prompt);
+      await queryUserForUrl(prompt);
 
-    expect(spy).toBeCalledTimes(1);
-    expect(spy).toBeCalledWith(mockUrl);
+      expect(spy).toBeCalledTimes(1);
+      expect(spy).toBeCalledWith(mockUrl);
+    });
   });
 });
