@@ -2,9 +2,6 @@ import { input } from '@inquirer/prompts';
 import { processUrl } from "../processing/processUrl.js";
 
 export async function queryUserForUrl(prompt) {
-  const apiKey = process.env.GOOGLE_API_KEY;
-  return console.log('processUrl() - apiKey', apiKey);
-
   const answer = await input({ message: prompt });
   const data = await processUrl(answer);
   try {
